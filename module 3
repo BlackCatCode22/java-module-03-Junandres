@@ -1,0 +1,88 @@
+// Package: mystudent
+package mystudent;
+
+class Student {
+    private String name;
+    private int age;
+
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void displayInfo() {
+        System.out.println("Student Name: " + name + ", Age: " + age);
+    }
+}
+
+public class App {
+    public static void main(String[] args) {
+        Student student1 = new Student("Alice", 20);
+        student1.displayInfo();
+    }
+}
+
+// Package: mystuff
+package mystuff;
+
+class MyStuff {
+    private String itemName;
+    private double price;
+
+    public MyStuff(String itemName, double price) {
+        this.itemName = itemName;
+        this.price = price;
+    }
+
+    public void showItem() {
+        System.out.println("Item: " + itemName + ", Price: $" + price);
+    }
+}
+
+public class Driver {
+    public static void main(String[] args) {
+        MyStuff stuff = new MyStuff("Laptop", 999.99);
+        stuff.showItem();
+    }
+}
+
+// Package: myanimals
+package myanimals;
+
+class Animal {
+    protected String name;
+    protected static int numOfAnimals = 0;
+
+    public Animal(String name) {
+        this.name = name;
+        numOfAnimals++;
+    }
+
+    public static void displayCount() {
+        System.out.println("Total animals: " + numOfAnimals);
+    }
+}
+
+class Cat extends Animal {
+    public Cat(String name) {
+        super(name);
+    }
+}
+
+class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
+}
+
+public class TestAnimals {
+    public static void main(String[] args) {
+        Cat cat1 = new Cat("Whiskers");
+        Dog dog1 = new Dog("Buddy");
+        Dog dog2 = new Dog("Charlie");
+        
+        Animal.displayCount();
+    }
+}
+
